@@ -1,0 +1,51 @@
+\documentclass[12pt]{letter}
+\usepackage{graphicx}
+\usepackage[nocapaddress]{envlab}
+\usepackage{multido}
+\SetLabel 
+  {88.9mm}  % width
+  {57.0mm}  % height
+  {21.4mm} % top margin
+  {19.05mm}  % left margin
+  {19.05mm}     % inter-label gap + right margin
+  {2}       % columns
+  {4}       % rows
+
+ \setlength{\ToAddressTopMargin}{0in}%
+ \setlength{\ToAddressLeftMargin}{0in}%
+ \setlength{\ToAddressWidth}{3.5in}%
+ %\addtolength{\ToAddressWidth}{-\ToAddressLeftMargin}%
+ %\addtolength{\ToAddressWidth}{-\LabelRightMargin}}
+
+\makelabels % Tell envlab to make labels in the document.
+
+%%make a very thin box around the labels
+%\setlength{\fboxsep}{0pt}
+%\setlength{\fboxrule}{0.005pt}
+%\renewcommand{\PrintLabel}[1]{\fbox{\parbox[t][\LabelHeight][t]{\LabelWidth}{\PrintAddress{#1}}}}
+
+%%original \PrinLabel command from envlab.sty
+%\renewcommand{\PrintLabel}[1]{\parbox[t][\LabelHeight][t]{\LabelWidth}{\PrintAddress{#1}}}
+
+\usepackage{datatool}
+\DTLloaddb{names}{brainhack_vienna.csv}
+
+
+\begin{document}%
+\startlabels%
+%\multido{\i=1+1}{8}{%
+\DTLforeach{names}{
+\name=Name}{
+\mlabel{}{%
+\begin{center}
+    \includegraphics[width=.95\linewidth]{bhgn.pdf}\\
+    \vskip4ex
+    {\Huge\bfseries \name} \\
+    \vskip2ex
+    \vspace*{\fill}
+    {Brainhack Vienna 2016} \\
+    \emph{Reliability and Reproduciblity in Connectomics} \\
+    {\small September 18 - 20, Austria}\\
+\end{center}
+}}
+\end{document}
