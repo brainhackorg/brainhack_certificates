@@ -28,7 +28,7 @@
 %\renewcommand{\PrintLabel}[1]{\parbox[t][\LabelHeight][t]{\LabelWidth}{\PrintAddress{#1}}}
 
 \usepackage{datatool}
-\DTLloaddb{names}{bhack_nyc_2017.csv}
+\DTLloaddb{names}{../data/namelist/brainhack_NYC_2017_namelist.csv}
 
 
 \begin{document}%
@@ -38,7 +38,7 @@
 \name=Name,\inst=Inst}{
 \mlabel{}{%
 \begin{center}
-    \includegraphics[width=.95\linewidth]{bhgn.pdf}\\
+    \includegraphics[width=.95\linewidth]{../data/logos/bhgn.pdf}\\
     \vskip4ex
     {\Huge\bfseries \name} \\
     \inst \\
