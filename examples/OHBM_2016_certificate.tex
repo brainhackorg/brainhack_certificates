@@ -17,14 +17,10 @@
 \newcommand*\initfamily{\usefont{U}{Zallman}{xl}{n}}
 %=============================
 \usepackage{datatool}
-\DTLloaddb{names}{bhack_nyc_2017.csv}
+\DTLloaddb{names}{../data/namelist/namelist-1.csv}
 %=============================
 \def\signature#1#2{\parbox[b]{1in}{\smash{#1}\vskip12pt}
 \hfill \parbox[t]{2.8in}{\shortstack{\vrule width 2.8in height 0.4pt\\\small#2}}}
-
-\def\signatured#1{\parbox[t][][c]{9in}{\centering \includegraphics[width=.45\linewidth]{Signature.pdf}\\ \shortstack{\vrule width 2.8in height 0.4pt\\\small#1}}}
-
-
 \def\sigskip{\vskip0.4in plus 0.1in}
         \def\beginskip{\vskip0.5875in plus 0.1in}
 %=============================
@@ -40,35 +36,51 @@
 %\TileWallPaper{1\paperwidth}{1\paperheight}{border-2.jpg}
 %=============================
 \DTLforeach{names}{
-\name=Name, \inst=Inst}{
+\dg=degree, \name=Name, \dgn=Dgn, \sub=subject, \inst=inst, \place=place}{
 %=============================
 \noindent
-\begin{minipage}[c]{9in}
-{\centering
-     \includegraphics[width=\linewidth]{bhgn.pdf}
-\par}
+\begin{minipage}[l]{1.5in}
+ \includegraphics[width=\linewidth]{../data/logos/OHBM_B.jpg}
 \end{minipage}
-
+\begin{minipage}[c]{6in}
+{\centering
+{\onehalfspacing
+    % {\LARGE\bfseries \color{title}{Certificate of Collaboration}}\\
+	\vskip1em
+	    {\LARGE\bfseries 2016 OHBM Hackathon}\\%\initfamily
+	    {Lausanne, Switzerland\\}
+	{June 23 - 25\\}
+}\par}
+\hfill
+\end{minipage}
+\begin{minipage}[r]{1.5in}
+ \includegraphics[width=\linewidth]{../data/logos/brainhack_logo.png}
+\end{minipage}
+% \begin{center}
+% 	\includegraphics[width=.75\linewidth]{../data/logos/ohbm.png}
+% \end{center}
+% \hfill
 \vskip2em
 
 {\centering
-    {\LARGE\bfseries \color{title}{Certificate of Collaboration}}\\
-    \vskip1em
-    {\Large\bfseries Brainhack Global 2017}\\%\initfamily
-    \emph{\bfseries Child Mind Institute, New York, NY\\}
-{March 2 - 4\\}
-}
+{\onehalfspacing
+    {\Large\bfseries \color{title}{Certificate of Collaboration}}\\
+	% \vskip1em
+	%     {\LARGE\bfseries 2016 OHBM Hackathon}\\%\initfamily
+	%     {Lausanne, Switzerland\\}
+	% {June 23 - 25\\}
+}\par}
 \hfill
 
-\vskip1em
+\vskip2em
 { 
-%\noindent\centering {\bfseries{\MakeUppercase{\name}} \\ \bfseries{\MakeUppercase{\inst}}} \\
-\noindent\centering {\large \bfseries{\name} \\ \bfseries{\inst}} \\
+\noindent\centering{This is to certify that} {\bfseries{\dg. \MakeUppercase{\name}}}, { \dgn}
+of {\sub}, {\inst}, \centering{participated in the \emph{\bfseries 2016 Organization of Human Brain Mapping Hackathon} organized by the \textbf{Organization of Human Brain Mapping Open Science Special Interest Group} in coordination with \textbf{brainhack.org}.}\\
 }
 
 \noindent
 %\beginskip
-{\singlespacing
+{%\singlespacing
 \vfill
  %\begin{minipage}[l]{1in}
  %  \sigskip \signature{}{Dr. Pierre Bellec \\ Organizer }
@@ -78,14 +90,13 @@
  % \sigskip \signature{}{Dr. B. Nolan Nichols \\ Open Science SIG Secretary}
  %\end{minipage}
 %\hfill
-%\begin{minipage}[c]{9in}
+\begin{minipage}[l]{5in}
 %\sigskip 
-%{\centering \includegraphics[width=.25\linewidth]{Signature.pdf}} \\
-\signatured{R. Cameron Craddock, Ph.D. \\ Chair of Brainhack Global 2017}
-%\end{minipage}
-}
+%\includegraphics[width=.5\linewidth]{../data/signature/signature.pdf}
+\signature{}{R. Cameron Craddock, Ph.D. \\ Chair of the OHBM Open Science SIG }
+\end{minipage}}
 %=============================
-%\pagebreak
+\pagebreak
 }
 \end{landscape}
 \end{document} 

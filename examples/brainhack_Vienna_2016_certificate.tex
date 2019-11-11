@@ -17,12 +17,12 @@
 \newcommand*\initfamily{\usefont{U}{Zallman}{xl}{n}}
 %=============================
 \usepackage{datatool}
-\DTLloaddb{names}{brainhack_vienna.csv}
+\DTLloaddb{names}{../data/namelist/brainhack_Vienna_2016_namelist.csv}
 %=============================
 \def\signature#1#2{\parbox[b]{1in}{\smash{#1}\vskip12pt}
 \hfill \parbox[t]{2.8in}{\shortstack{\vrule width 2.8in height 0.4pt\\\small#2}}}
 
-\def\signatured#1{\parbox[t][][c]{9in}{\centering \includegraphics[width=.45\linewidth]{Signature.pdf}\\ \shortstack{\vrule width 2.8in height 0.4pt\\\small#1}}}
+\def\signatured#1{\parbox[t][][c]{9in}{\centering \includegraphics[width=.45\linewidth]{../data/signature/signature.pdf}\\ \shortstack{\vrule width 2.8in height 0.4pt\\\small#1}}}
 
 
 \def\sigskip{\vskip0.4in plus 0.1in}
@@ -48,7 +48,7 @@
 {\onehalfspacing
     % {\LARGE\bfseries \color{title}{Certificate of Collaboration}}\\
     \centering
-     \includegraphics[width=\linewidth]{bhgn.pdf}
+     \includegraphics[width=\linewidth]{../data/logos/bhgn.pdf}
 	% \vskip1em
 	%     {\LARGE\bfseries 2016 OHBM Hackathon}\\%\initfamily
 	%     {Lausanne, Switzerland\\}
@@ -99,7 +99,7 @@
 %\hfill
 %\begin{minipage}[c]{9in}
 %\sigskip 
-%{\centering \includegraphics[width=.25\linewidth]{Signature.pdf}} \\
+%{\centering \includegraphics[width=.25\linewidth]{../data/signature/signature.pdf}} \\
 \signatured{R. Cameron Craddock, Ph.D. \\ Chair of 2016 Brainhack Vienna}
 %\end{minipage}
 }

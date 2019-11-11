@@ -28,7 +28,7 @@
 %\renewcommand{\PrintLabel}[1]{\parbox[t][\LabelHeight][t]{\LabelWidth}{\PrintAddress{#1}}}
 
 \usepackage{datatool}
-\DTLloaddb{names}{brainhack_vienna.csv}
+\DTLloaddb{names}{../data/namelist/example_namelist.csv}
 
 
 \begin{document}%
@@ -38,14 +38,14 @@
 \name=Name}{
 \mlabel{}{%
 \begin{center}
-    \includegraphics[width=.95\linewidth]{bhgn.pdf}\\
+    \includegraphics[width=.95\linewidth]{../data/logos/bhgn.pdf}\\
     \vskip4ex
     {\Huge\bfseries \name} \\
     \vskip2ex
     \vspace*{\fill}
-    {Brainhack Vienna 2016} \\
+    {Brainhack \{City\} \{Year\}} \\
     \emph{Reliability and Reproduciblity in Connectomics} \\
-    {\small September 18 - 20, Austria}\\
+    {\small \{Month\} \{Start day\} - \{End day\}, \{City\}}\\
 \end{center}
 }}
 \end{document}
