@@ -30,4 +30,4 @@ pdflatex examples/brainhack_NYC_2017_certificate.tex
 ```
 
 You can upload the files to `Sharelatex` or `Overleaf` and compile them there
-or install `  LaTeX` on your local system.
+or install `LaTeX` on your local system.
